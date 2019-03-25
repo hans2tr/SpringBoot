@@ -31,7 +31,7 @@ public class Account {
 	@JoinColumn(name="idInfo")
 	private InfoAcc infoAc;
 	
-	@OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
 	private List<Book> book;
 
 	public String getUserName() {

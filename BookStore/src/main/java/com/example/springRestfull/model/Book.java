@@ -22,7 +22,7 @@ public class Book {
 	@Column(name="nameBook")
 	private String nameBook;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "idType")
 	private Type type;
 	

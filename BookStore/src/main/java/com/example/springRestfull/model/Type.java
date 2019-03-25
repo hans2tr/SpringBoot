@@ -1,11 +1,14 @@
 package com.example.springRestfull.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,8 +22,8 @@ public class Type {
 	@Column(name = "nameTy")
 	private String nameTy;
 	
-	@OneToOne(mappedBy = "type")
-	private Book book;
+	@OneToMany(mappedBy = "type",fetch = FetchType.EAGER)
+	private List<Book> book;
 
 	public String getNameTy() {
 		return nameTy;
@@ -34,11 +37,11 @@ public class Type {
 		return id;
 	}
 
-	public Book getBook() {
+	public List<Book> getBook() {
 		return book;
 	}
 
-	public void setBook(Book book) {
+	public void setBook(List<Book> book) {
 		this.book = book;
 	}
 

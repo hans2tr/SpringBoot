@@ -39,7 +39,7 @@ public class BeanConf {
 	        env.getProperty("spring.jpa.properties.hibernate.current_session_context_class"));
 	    LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
 	    // Package contain entity classes
-	    factoryBean.setPackagesToScan("stackjava.com.springboothibernate.entities");
+	    factoryBean.setPackagesToScan("com.example.springRestfull.model");
 	    factoryBean.setDataSource(dataSource);
 	    factoryBean.setHibernateProperties(properties);
 	    factoryBean.afterPropertiesSet();

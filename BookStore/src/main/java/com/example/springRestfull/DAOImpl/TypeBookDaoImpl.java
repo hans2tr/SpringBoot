@@ -29,7 +29,7 @@ public class TypeBookDaoImpl implements TypeDao {
 		Criteria cri = session.getCurrentSession().createCriteria(Type.class);
 		cri.add(Restrictions.eq("id", id));
 		
-		return (Type) cri.uniqueResult();
+		return (Type)cri.uniqueResult();
 	}
 
 }
